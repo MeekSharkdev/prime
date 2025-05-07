@@ -117,7 +117,7 @@ const NewsMediaGrid = () => {
                   alt={item.title}
                   className="object-cover rounded-t-lg w-full h-full"
                 />
-                <span className="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold py-1 px-2 rounded-full">
+                <span className="absolute top-4 right-4 bg-PRIMEblue text-white text-xs font-bold py-1 px-2 rounded-full">
                   {item.type}
                 </span>
               </div>
