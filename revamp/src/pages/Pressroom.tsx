@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navbar from "../components/Navbar/Navbar"; // Import Navbar
 import Footer from "@/components/Footer"; // Import Footer
 import { Button } from "@/components/ui/button";
@@ -47,21 +47,21 @@ const NewsMediaGrid = () => {
   return (
     <div className="flex flex-col p-4 md:p-8 mt-20 bg-gray-50">
       {/* Navbar */}
-      <Navbar className="fixed top-0 left-0 w-full z-50" />
+      <Navbar />
 
       {/* Header Section */}
       <header className="relative h-[250px] w-full overflow-hidden rounded-lg shadow-lg">
-  <img
-    src="/About.png" // Adjust the path based on where you store your image
-    alt="News Header Background"
-    className="w-full h-full object-cover"
-  />
-  <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-    <h1 className="text-white text-2xl md:text-3xl font-semibold text-center">
-      NEWS & MEDIA APPEARANCES
-    </h1>
-  </div>
-</header>
+        <img
+          src="/About.png" // Adjust the path based on where you store your image
+          alt="News Header Background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+          <h1 className="text-white text-2xl md:text-3xl font-semibold text-center">
+            NEWS & MEDIA APPEARANCES
+          </h1>
+        </div>
+      </header>
 
       {/* Pagination */}
       <div className="flex justify-center items-center gap-4 mt-8">
@@ -105,7 +105,9 @@ const NewsMediaGrid = () => {
               </span>
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-900">{item.title}</h3>
+              <h3 className="text-xl font-semibold text-gray-900">
+                {item.title}
+              </h3>
               <p className="text-sm text-gray-500">{item.date}</p>
             </div>
           </Link>
@@ -113,7 +115,7 @@ const NewsMediaGrid = () => {
       </div>
 
       {/* Footer */}
-      <Footer className="mt-16" />
+      <Footer />
     </div>
   );
 };
