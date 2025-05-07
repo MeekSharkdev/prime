@@ -90,7 +90,7 @@ const ServicesPage = () => {
         >
           {/* Overlay */}
           <div className="absolute inset-0 bg-PRIMEblue opacity-50"></div>{" "}
-          {/* Updated to match Careers color */}
+
           {/* Centered Title and Breadcrumb with animation */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
