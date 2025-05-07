@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Search } from "lucide-react";
 import { locationOptions, categoryOptions, leaseOptions } from "@/data/propertyData";
 
@@ -9,42 +10,63 @@ interface FiltersProps {
     searchQuery: string;
   };
   onFilterChange: (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => void;
+  onDebouncedSearchChange: (value: string) => void;
   onAdd: () => void;
 }
 
-export default function Filters({ filters, onFilterChange }: FiltersProps) {
+export default function Filters({
+  filters,
+  onFilterChange,
+  onDebouncedSearchChange,
+}: FiltersProps) {
+  const [searchValue] = useState(filters.searchQuery);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      onDebouncedSearchChange(searchValue);
+    }, 300); // Debounce for smoother performance
+
+    return () => clearTimeout(timeout);
+  }, [searchValue, onDebouncedSearchChange]);
+
   return (
-    <div className="relative z-10 bg-[var(--color-PRIMEwhite)] -mt-20 max-w-4xl border rounded-lg mx-auto">
-      <div className="bg-[var(--color-PRIMEwhite)] shadow-lg rounded-xl p-6 flex flex-wrap gap-6 items-center justify-between">
+    <div className="relative z-10 bg-PRIMEwhite -mt-20 max-w-4xl border rounded-lg mx-auto">
+      <div className="bg-PRIMEwhite shadow-lg rounded-xl p-6 flex flex-wrap gap-6 items-center justify-between">
         <div className="flex flex-wrap gap-4 items-center">
           <select
             name="location"
             value={filters.location}
             onChange={onFilterChange}
-            className="border-b border-[var(--color-PRIMEgray)] p-2 bg-[var(--color-PRIMEwhite)] w-[160px] text-sm focus:ring-0 focus:border-[var(--color-PRIMEblue)]"
+            className="border-b border-PRIMEgray p-2 bg-PRIMEwhite w-[160px] text-sm focus:ring-0 focus:border-PRIMEblue"
           >
-            {locationOptions.map(location => (
-              <option key={location} value={location}>{location}</option>
+            {locationOptions.map((location) => (
+              <option key={location} value={location}>
+                {location}
+              </option>
             ))}
           </select>
           <select
             name="category"
             value={filters.category}
             onChange={onFilterChange}
-            className="border-b border-[var(--color-PRIMEgray)] p-2 bg-[var(--color-PRIMEwhite)] w-[160px] text-sm focus:ring-0 focus:border-[var(--color-PRIMEblue)]"
+            className="border-b border-PRIMEgray p-2 bg-PRIMEwhite w-[160px] text-sm focus:ring-0 focus:border-PRIMEblue"
           >
-            {categoryOptions.map(category => (
-              <option key={category} value={category}>{category}</option>
+            {categoryOptions.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
             ))}
           </select>
           <select
             name="leaseType"
             value={filters.leaseType}
             onChange={onFilterChange}
-            className="border-b border-[var(--color-PRIMEgray)] p-2 bg-[var(--color-PRIMEwhite)] w-[160px] text-sm focus:ring-0 focus:border-[var(--color-PRIMEblue)]"
+            className="border-b border-PRIMEgray p-2 bg-PRIMEwhite w-[160px] text-sm focus:ring-0 focus:border-PRIMEblue"
           >
-            {leaseOptions.map(type => (
-              <option key={type} value={type}>{type}</option>
+            {leaseOptions.map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
             ))}
           </select>
         </div>
