@@ -17,7 +17,7 @@ import {
 const ITEMS_PER_PAGE = 3;
 
 export default function PropertiesPage() {
-  const [properties, setProperties] = useState<Property[]>(initialProperties);
+  const [properties] = useState<Property[]>(initialProperties);
   const [currentPages, setCurrentPages] = useState(
     Array(categories.length).fill(0)
   );
@@ -38,11 +38,12 @@ export default function PropertiesPage() {
       // Show all grouped categories when no filter is selected
       setVisibleCategories([
         {
-          name: (location: string = "Quezon City") =>
-            `Featured Office Spaces for leases in ${location}`,
+          name: "Featured Office Spaces for leases in Quezon City",
           description:
-            "Looking to set up your first office? Ease into an easier travel to work with these spaces located at the center of Metro Manila.",
-          filter: "Office Spaces",
+            "Looking to set up your first office? Ease into an easier travel to work with these spaces located in Quezon City.",
+          filter: (prop: Property) =>
+            prop.category === "Office Spaces" &&
+            prop.location === "Quezon City",
         },
         {
           name: "Key Retail Building Projects and Commercial Lots",
@@ -136,7 +137,6 @@ export default function PropertiesPage() {
     return filtered;
   };
 
-  // Rest of the component remains the same...
   // Handle next/previous pagination
   const handleNext = (index: number) => {
     setSlideDirection("left");
@@ -167,19 +167,10 @@ export default function PropertiesPage() {
     setFilters((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Add new sample property for testing/demo purposes
-  const handleAddProperty = () => {
-    const newProperty: Property = {
-      id: Date.now(),
-      title: "New Sample Property",
-      location: "Quezon City",
-      leaseType: "For Lease",
-      category: "Retail Spaces",
-      png: "/images/properties/sample.png",
-      type: "",
-    };
-    setProperties((prev) => [...prev, newProperty]);
-  };
+
+  function handleAddProperty(): void {
+    throw new Error("Function not implemented.");
+  }
 
   return (
     <div className="min-h-screen bg-PRIMEwhite overflow-x-hidden">
@@ -261,7 +252,7 @@ export default function PropertiesPage() {
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="absolute left-[-60px] z-10 bg-PRIMEwhite border rounded-full shadow-md hover:bg-PRIMEblue"
+                      className="absolute left-[-60px] z-10"
                       onClick={() => handlePrev(index)}
                       disabled={page === 0}
                     >
@@ -297,7 +288,7 @@ export default function PropertiesPage() {
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="absolute right-[-60px] z-10 bg-PRIMEwhite border rounded-full shadow-md hover:bg-PRIMEblue"
+                      className="absolute right-[-60px] z-10"
                       onClick={() => handleNext(index)}
                       disabled={page >= totalPages - 1}
                     >

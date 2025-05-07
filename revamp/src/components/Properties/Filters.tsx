@@ -24,14 +24,14 @@ export default function Filters({
   useEffect(() => {
     const timeout = setTimeout(() => {
       onDebouncedSearchChange(searchValue);
-    }, 300); // Debounce for smoother performance
+    }, 300); 
 
     return () => clearTimeout(timeout);
   }, [searchValue, onDebouncedSearchChange]);
 
   return (
-    <div className="relative z-10 bg-PRIMEwhite -mt-20 max-w-4xl border rounded-lg mx-auto">
-      <div className="bg-PRIMEwhite shadow-lg rounded-xl p-6 flex flex-wrap gap-6 items-center justify-between">
+    <div className="relative z-10 bg-PRIMEwhite -mt-20 max-w-4xl border  border-PRIMEgray rounded-lg mx-auto">
+      <div className=" shadow-lg rounded-xl p-6 flex flex-wrap gap-6 items-center justify-between">
         <div className="flex flex-wrap gap-4 items-center">
           <select
             name="location"
