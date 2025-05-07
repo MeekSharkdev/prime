@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "../components/Navbar/Navbar"; // Import Navbar
 import Footer from "@/components/Footer"; // Import Footer
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom"; // Import Link for navigation
 
@@ -45,73 +46,98 @@ const NewsMediaGrid = () => {
   };
 
   return (
-    <div className="flex flex-col p-4 md:p-8 mt-20 bg-gray-50">
+    <div className="flex flex-col">
       {/* Navbar */}
       <Navbar />
-
-      {/* Header Section */}
-      <header className="relative h-[250px] w-full overflow-hidden rounded-lg shadow-lg">
-        <img
-          src="/About.png" // Adjust the path based on where you store your image
-          alt="News Header Background"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-          <h1 className="text-white text-2xl md:text-3xl font-semibold text-center">
-            NEWS & MEDIA APPEARANCES
-          </h1>
-        </div>
-      </header>
-
-      {/* Pagination */}
-      <div className="flex justify-center items-center gap-4 mt-8">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={handlePrevPage}
-          disabled={currentPage === 1}
-        >
-          <ChevronLeft />
-        </Button>
-        <span className="text-lg text-gray-700">
-          Page {currentPage} of {totalPages}
-        </span>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={handleNextPage}
-          disabled={currentPage === totalPages}
-        >
-          <ChevronRight />
-        </Button>
-      </div>
-
-      {/* News Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-        {currentItems.map((item) => (
-          <Link
-            key={item.id}
-            to={`/news/${item.id}`}
-            className="bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+      <section className="relative mb-10">
+        <div className="w-full h-[500px] bg-[url('/Property/Properties.png')] bg-cover bg-center rounded-lg relative group">
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-PRIMEblue opacity-50"></div>{" "}
+          {/* Updated to match Careers color */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="absolute inset-0 flex flex-col items-center justify-center text-PRIMEwhite text-center px-4"
           >
-            <div className="relative">
-              <img
-                src={item.imageUrl}
-                alt={item.title}
-                className="w-full h-48 object-cover rounded-t-xl"
-              />
-              <span className="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold py-1 px-2 rounded-full">
-                {item.type}
-              </span>
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-900">
-                {item.title}
-              </h3>
-              <p className="text-sm text-gray-500">{item.date}</p>
-            </div>
-          </Link>
-        ))}
+            <h1 className="text-[36pt] sm:text-[48pt] font-bold uppercase">
+              News & Media Apperances
+            </h1>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="inline-flex items-center px-6 py-3 border-2 border-PRIMEwhite rounded-full text-lg font-semibold mt-4"
+            >
+              <Link to="/" className="hover:underline">
+                Home
+              </Link>
+              <span className="mx-2">/</span>
+              <span className="font-semibold">News & Media</span>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      <div className="max-w-[1400px] flex flex-col px-15 mx-auto">
+        {/* Pagination */}
+        <div className="flex justify-end items-center gap-4 mt-8">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handlePrevPage}
+            disabled={currentPage === 1}
+          >
+            <ChevronLeft />
+          </Button>
+          <span className="text-lg text-gray-700">
+            Page {currentPage} of {totalPages}
+          </span>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}
+          >
+            <ChevronRight />
+          </Button>
+        </div>
+
+        {/* News Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 my-8">
+          {currentItems.map((item) => (
+            <Link
+              key={item.id}
+              to={`/news/${item.id}`}
+              className="bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300 transform hover:scale-101 w-[400px] h-[430px]"
+            >
+              <div className="relative h-[320px]">
+                <img
+                  src={item.imageUrl}
+                  alt={item.title}
+                  className="object-cover rounded-t-lg w-full h-full"
+                />
+                <span className="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold py-1 px-2 rounded-full">
+                  {item.type}
+                </span>
+              </div>
+              <div className="px-6 pt-6 flex flex-col">
+                <h3 className="text-xl font-semibold text-gray-900">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-PRIMEgray">{item.date}</p>
+                <Link
+                  key={item.id}
+                  to={`/news/${item.id}`}
+                  className="text-center text-sm text-PRIMEgray underline"
+                >
+                  {" "}
+                  View Details
+                </Link>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
 
       {/* Footer */}

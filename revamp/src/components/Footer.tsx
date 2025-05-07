@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className="bg-PRIMEblack text-slate-300 px-6 py-20 font-[Gotham Book]">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16 sm:gap-20 lg:gap-32 sm:px-10 lg:px-0">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 xl:grid-cols-3 gap-16 sm:gap-20 lg:gap-32 sm:px-10 xl:px-0">
         {/* Left Section - Contact Info */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
