@@ -39,7 +39,6 @@ export default function Filters({
             onChange={onFilterChange}
             className="border-b border-PRIMEgray p-2 bg-PRIMEwhite w-[160px] text-sm focus:ring-0 focus:border-PRIMEblue"
           >
-            <option value="">All Locations</option>
             {locationOptions.map((location) => (
               <option key={location} value={location}>
                 {location}
@@ -52,7 +51,6 @@ export default function Filters({
             onChange={onFilterChange}
             className="border-b border-PRIMEgray p-2 bg-PRIMEwhite w-[160px] text-sm focus:ring-0 focus:border-PRIMEblue"
           >
-            <option value="">All Categories</option>
             {categoryOptions.map((category) => (
               <option key={category} value={category}>
                 {category}
@@ -65,7 +63,6 @@ export default function Filters({
             onChange={onFilterChange}
             className="border-b border-PRIMEgray p-2 bg-PRIMEwhite w-[160px] text-sm focus:ring-0 focus:border-PRIMEblue"
           >
-            <option value="">All Lease Types</option>
             {leaseOptions.map((type) => (
               <option key={type} value={type}>
                 {type}
