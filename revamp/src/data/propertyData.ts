@@ -16,6 +16,11 @@ export const properties: Property[] = [
   { id: 3, title: "Corporate Plaza Suite", type: "Ortigas", location: "Ortigas", png: "/Property/mockup.png", category: "Office Spaces", leaseType: "For Lease" },
   { id: 4, title: "Startup Hub Workspace", type: "Taguig", location: "Taguig", png: "/Property/mockup.png", category: "Office Spaces", leaseType: "For Rent" },
   { id: 5, title: "Pasig Office Condo", type: "Pasig", location: "Pasig", png: "/Property/mockup.png", category: "Office Spaces", leaseType: "For Lease" },
+  { id: 26, title: "Modern Office Tower", type: "Quezon City", location: "Quezon City", png: "/Property/mockup.png", category: "Office Spaces", leaseType: "For Rent" },
+  { id: 27, title: "Modern Office Tower", type: "Quezon City", location: "Quezon City", png: "/Property/mockup.png", category: "Office Spaces", leaseType: "For Lease" },
+  { id: 28, title: "Modern Office Tower", type: "Quezon City", location: "Quezon City", png: "/Property/mockup.png", category: "Office Spaces", leaseType: "For Rent" },
+  { id: 29, title: "Modern Office Tower", type: "Quezon City", location: "Quezon City", png: "/Property/mockup.png", category: "Office Spaces", leaseType: "For Lease" },
+  { id: 30, title: "Modern Office Tower", type: "Quezon City", location: "Quezon City", png: "/Property/mockup.png", category: "Office Spaces", leaseType: "For Lease" },
 
   // Retail Spaces 
   { id: 6, title: "Prime Retail Strip Mall", type: "Quezon City", location: "Quezon City", png: "/Property/Retail.png", category: "Retail Spaces", leaseType: "For Lease" },

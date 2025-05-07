@@ -17,7 +17,7 @@ export function Button({
 
   const variants = {
     default: "bg-[var(--color-PRIMEblue)] text-[var(--color-PRIMEwhite)] hover:bg-[var(--color-PRIMEblue)] active:bg-[var(--color-PRIMEblue)]",
-    ghost: "bg-transparent text-[var(--color-PRIMEblack)] border border-[var(--color-PRIMEgray)] hover:bg-[var(--color-PRIMElightgray)] active:bg-[var(--color-PRIMEgray)]",
+    ghost: "bg-PRIMEblue text-[var(--color-PRIMEwhite)] border border-[var(--color-PRIMEgray)] active:bg-[var(--color-PRIMEgray)]",
   };
 
   const sizes = {
