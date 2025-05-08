@@ -208,35 +208,74 @@ const ServicesPage = () => {
 
       {/* Content Section */}
       <section className="px-6 lg:px-12 py-16 max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="flex sm:flex-col lg:flex-row gap-8">
+          <div className="flex flex-col space-y-5">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="bg-PRIMEwhite rounded-lg shadow-lg p-6 max-h-[530px] lg:w-[450px] overflow-y-auto"
+            >
+              <div className="text-left mb-8">
+                <h2 className="text-2xl font-bold text-PRIMEblue">Services</h2>
+                <div className="h-1 w-24 bg-gradient-to-r from-PRIMEyellow via-PRIMEred to-PRIMEblue rounded-full mt-2"></div>
+              </div>
+              <div className="space-y-3">
+                {serviceList.map((service) => (
+                  <button
+                    key={service.id}
+                    onClick={() => setSelectedService(service.id)}
+                    className={`flex items-center justify-between w-full py-3 px-4 rounded-lg transition-all duration-300 ${
+                      selectedService === service.id
+                        ? "bg-blue-100 text-PRIMEblue font-semibold shadow"
+                        : "hover:bg-blue-100 text-PRIMEgray"
+                    }`}
+                  >
+                    <span>{service.name}</span>
+                    <ArrowRight size={18} />
+                  </button>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
+              className="bg-PRIMEblue text-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center w-full py-12"
+            >
+              <div className="flex items-center justify-center w-16 h-16 bg-PRIMEblue border border-PRIMEwhite rounded-full mb-4">
+                <PhoneCall size={32} color="white" />
+              </div>
+              <p className="text-2xl sm:text-xl md:text-2xl font-bold mb-2">
+                Need Help?
+              </p>
+              <p className="text-lg sm:text-base md:text-lg font-semibold mb-6">
+                Call Here
+              </p>
+              <div className="text-sm sm:text-xs md:text-sm space-y-2 text-center">
+                <p>
+                  <strong>Phone:</strong>{" "}
+                  <a
+                    href="tel:+63288881000"
+                    className="text-blue-100 hover:underline"
+                  >
+                    +63 2 8888 1000
+                  </a>
+                </p>
+                <p>
+                  <strong>Mobile:</strong>{" "}
+                  <a
+                    href="tel:+639171234567"
+                    className="text-blue-100 hover:underline"
+                  >
+                    +63 917 123 4567
+                  </a>
+                </p>
+              </div>
+            </motion.div>
+          </div>
           {/* Sidebar Section */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="bg-PRIMEwhite rounded-lg shadow-lg p-6 max-h-[600px] overflow-y-auto"
-          >
-            <div className="text-left mb-8">
-              <h2 className="text-2xl font-bold text-PRIMEblue">Services</h2>
-              <div className="h-1 w-24 bg-gradient-to-r from-PRIMEyellow via-PRIMEred to-PRIMEblue rounded-full mt-2"></div>
-            </div>
-            <div className="space-y-3">
-              {serviceList.map((service) => (
-                <button
-                  key={service.id}
-                  onClick={() => setSelectedService(service.id)}
-                  className={`flex items-center justify-between w-full py-3 px-4 rounded-lg transition-all duration-300 ${
-                    selectedService === service.id
-                      ? "bg-blue-100 text-PRIMEblue font-semibold shadow"
-                      : "hover:bg-blue-100 text-PRIMEgray"
-                  }`}
-                >
-                  <span>{service.name}</span>
-                  <ArrowRight size={18} />
-                </button>
-              ))}
-            </div>
-          </motion.div>
 
           {/* Main Content Area */}
           <motion.div
@@ -264,42 +303,6 @@ const ServicesPage = () => {
           </motion.div>
 
           {/* Help Section */}
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
-            className="bg-PRIMEblue text-white rounded-lg shadow-lg p-6 flex flex-col items-center justify-center w-full py-12"
-          >
-            <div className="flex items-center justify-center w-16 h-16 bg-PRIMEblue border border-PRIMEwhite rounded-full mb-4">
-              <PhoneCall size={32} color="white" />
-            </div>
-            <p className="text-2xl sm:text-xl md:text-2xl font-bold mb-2">
-              Need Help?
-            </p>
-            <p className="text-lg sm:text-base md:text-lg font-semibold mb-6">
-              Call Here
-            </p>
-            <div className="text-sm sm:text-xs md:text-sm space-y-2 text-center">
-              <p>
-                <strong>Phone:</strong>{" "}
-                <a
-                  href="tel:+63288881000"
-                  className="text-blue-100 hover:underline"
-                >
-                  +63 2 8888 1000
-                </a>
-              </p>
-              <p>
-                <strong>Mobile:</strong>{" "}
-                <a
-                  href="tel:+639171234567"
-                  className="text-blue-100 hover:underline"
-                >
-                  +63 917 123 4567
-                </a>
-              </p>
-            </div>
-          </motion.div>
         </div>
       </section>
 
