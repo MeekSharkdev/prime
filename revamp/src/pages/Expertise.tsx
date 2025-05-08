@@ -144,76 +144,112 @@ const ExpertisePage = () => {
 
       {/* Content Section */}
       <section className="px-6 lg:px-12 py-16 max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Expertise Sidebar */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex flex-col bg-white shadow-lg p-8 rounded-xl"
-            style={{ width: "100%", height: "auto" }}
-          >
-            <div className="text-left mb-8">
-              <h2 className="text-2xl font-bold text-PRIMEblue">Expertise</h2>
-              <div className="h-1 w-24 bg-gradient-to-r from-PRIMEyellow via-PRIMEred to-PRIMEblue rounded-full mt-2"></div>
-            </div>
+        <div className="flex sm:flex-col lg:flex-row gap-8">
+          <div className="flex flex-col space-y-5">
+            {/* Expertise Sidebar */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="flex flex-col bg-white shadow-lg p-8 rounded-xl"
+              style={{ width: "100%", height: "auto" }}
+            >
+              <div className="text-left mb-8">
+                <h2 className="text-2xl font-bold text-PRIMEblue">Expertise</h2>
+                <div className="h-1 w-24 bg-gradient-to-r from-PRIMEyellow via-PRIMEred to-PRIMEblue rounded-full mt-2"></div>
+              </div>
 
-            {/* Buttons */}
-            <div className="flex flex-col space-y-4">
-              <button
-                onClick={handleDropdownClick}
-                className={`flex items-center justify-between w-full py-3 px-4 rounded-md transition-all duration-300 ${
-                  showDropdown
-                    ? "bg-blue-100 text-PRIMEblue font-semibold"
-                    : "hover:bg-blue-100 text-PRIMEgray"
-                }`}
-              >
-                <span>Kickstart</span>
-                <ArrowRight size={18} className="text-PRIMEblue" />
-              </button>
-
-              <AnimatePresence>
-                {showDropdown && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="flex flex-col space-y-4 pl-4"
-                  >
-                    {serviceList.slice(0, 3).map((service) => (
-                      <button
-                        key={service.id}
-                        onClick={() => setSelectedService(service.id)}
-                        className={`flex justify-between items-center py-2 px-4 text-PRIMEgray hover:bg-blue-100 rounded-md ${
-                          selectedService === service.id ? "bg-blue-100" : ""
-                        }`}
-                      >
-                        <span>{service.name}</span>
-                        <ArrowRight size={18} className="text-PRIMEgray" />
-                      </button>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
-              {serviceList.slice(3).map((service) => (
+              {/* Buttons */}
+              <div className="flex flex-col space-y-4">
                 <button
-                  key={service.id}
-                  onClick={() => setSelectedService(service.id)}
-                  className={`flex items-center justify-between w-full py-3 px-4 rounded-md hover:bg-blue-100 text-PRIMEgray transition-all duration-300 ${
-                    selectedService === service.id ? "bg-blue-100" : ""
+                  onClick={handleDropdownClick}
+                  className={`flex items-center justify-between w-full py-3 px-4 rounded-md transition-all duration-300 ${
+                    showDropdown
+                      ? "bg-blue-100 text-PRIMEblue font-semibold"
+                      : "hover:bg-blue-100 text-PRIMEgray"
                   }`}
                 >
-                  <span>{service.name}</span>
+                  <span>Kickstart</span>
                   <ArrowRight size={18} className="text-PRIMEblue" />
                 </button>
-              ))}
-            </div>
-          </motion.div>
+
+                <AnimatePresence>
+                  {showDropdown && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.4, ease: "easeOut" }}
+                      className="flex flex-col space-y-4 pl-4"
+                    >
+                      {serviceList.slice(0, 3).map((service) => (
+                        <button
+                          key={service.id}
+                          onClick={() => setSelectedService(service.id)}
+                          className={`flex justify-between items-center py-2 px-4 text-PRIMEgray hover:bg-blue-100 rounded-md ${
+                            selectedService === service.id ? "bg-blue-100" : ""
+                          }`}
+                        >
+                          <span>{service.name}</span>
+                          <ArrowRight size={18} className="text-PRIMEgray" />
+                        </button>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                {serviceList.slice(3).map((service) => (
+                  <button
+                    key={service.id}
+                    onClick={() => setSelectedService(service.id)}
+                    className={`flex items-center justify-between w-full py-3 px-4 rounded-md hover:bg-blue-100 text-PRIMEgray transition-all duration-300 ${
+                      selectedService === service.id ? "bg-blue-100" : ""
+                    }`}
+                  >
+                    <span>{service.name}</span>
+                    <ArrowRight size={18} className="text-PRIMEblue" />
+                  </button>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Help Section */}
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
+              className="bg-PRIMEblue text-PRIMEwhite rounded-lg shadow-lg p-6 flex flex-col items-center justify-center w-full lg:w-[420px] mx-auto min-h-[350px]"
+            >
+              <div className="flex items-center justify-center w-16 h-16 bg-PRIMEblue border border-PRIMEwhite rounded-full mb-4">
+                <PhoneCall size={32} color="white" />
+              </div>
+              <p className="text-2xl font-bold mb-2">Need Help?</p>
+              <p className="text-lg font-semibold mb-6">Call Here</p>
+              <div className="text-sm space-y-2 text-center">
+                <p>
+                  <strong>Phone:</strong>{" "}
+                  <a
+                    href="tel:+63288881000"
+                    className="text-PRIMEwhite hover:underline"
+                  >
+                    +63 2 8888 1000
+                  </a>
+                </p>
+                <p>
+                  <strong>Mobile:</strong>{" "}
+                  <a
+                    href="tel:+639171234567"
+                    className="text-PRIMEwhite hover:underline"
+                  >
+                    +63 917 123 4567
+                  </a>
+                </p>
+              </div>
+            </motion.div>
+          </div>
 
           {/* Main Service Content */}
-          <div className="lg:col-span-2">
+          <div className="flex flex-col w-full">
             <AnimatePresence mode="wait">
               {selectedService === 1 ? (
                 <motion.div
@@ -222,7 +258,7 @@ const ExpertisePage = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
-                  className="flex space-x-4"
+                  className="flex gap-5"
                   style={{ width: "100%", height: "auto" }}
                 >
                   <div className="flex-1 PRIMElightgray rounded-md overflow-hidden">
@@ -235,13 +271,6 @@ const ExpertisePage = () => {
                   <div className="flex-1 bg-PRIMElightgray rounded-md overflow-hidden">
                     <img
                       src="https://via.placeholder.com/600x400?text=Buying+Selling+Image+2"
-                      alt="Buying & Selling"
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <div className="flex-1 bg-PRIMElightgray rounded-md overflow-hidden">
-                    <img
-                      src="https://via.placeholder.com/600x400?text=Buying+Selling+Image+3"
                       alt="Buying & Selling"
                       className="object-cover w-full h-full"
                     />
@@ -267,40 +296,6 @@ const ExpertisePage = () => {
               )}
             </AnimatePresence>
           </div>
-
-          {/* Help Section */}
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
-            className="bg-PRIMEblue text-PRIMEwhite rounded-lg shadow-lg p-6 flex flex-col items-center justify-center w-full lg:w-[420px] mx-auto min-h-[500px]"
-          >
-            <div className="flex items-center justify-center w-16 h-16 bg-PRIMEblue border border-PRIMEwhite rounded-full mb-4">
-              <PhoneCall size={32} color="white" />
-            </div>
-            <p className="text-2xl font-bold mb-2">Need Help?</p>
-            <p className="text-lg font-semibold mb-6">Call Here</p>
-            <div className="text-sm space-y-2 text-center">
-              <p>
-                <strong>Phone:</strong>{" "}
-                <a
-                  href="tel:+63288881000"
-                  className="text-PRIMEwhite hover:underline"
-                >
-                  +63 2 8888 1000
-                </a>
-              </p>
-              <p>
-                <strong>Mobile:</strong>{" "}
-                <a
-                  href="tel:+639171234567"
-                  className="text-PRIMEwhite hover:underline"
-                >
-                  +63 917 123 4567
-                </a>
-              </p>
-            </div>
-          </motion.div>
         </div>
       </section>
 
