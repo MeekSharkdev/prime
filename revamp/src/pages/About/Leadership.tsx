@@ -19,12 +19,12 @@ const PrimeFoundation = (title: string, team: TeamMember[]) => (
       {team.map((member, i) => (
         <div
           key={i}
-          className="flex flex-col w-[350px] h-[450px] items-center shadow-md"
+          className="flex flex-col w-[350px] h-[450px] items-center rounded-lg shadow-lg border border-PRIMEgray "
         >
           <img
             src={member.image}
             alt={member.name}
-            className="w-[350px] h-[350px] object-cover"
+            className="w-[350px] h-[350px] object-cover rounded-lg"
           />
           <div className="flex flex-col w-full h-[100px] justify-center px-5">
             <h4 className="text-lg font-gotham-bold text-[var(--color-PRIMEblack)]">
@@ -39,18 +39,18 @@ const PrimeFoundation = (title: string, team: TeamMember[]) => (
 );
 
 const teamLeaders: TeamMember[] = [
-  { name: "Honey A", role: "Team Leader", image: "/default.png" },
-  { name: "Hanie B", role: "Team Leader", image: "/default.png" },
-  { name: "Hany C", role: "Team Leader", image: "/default.png" },
+  { name: "Name", role: "Team Leader", image: "/photo.png" },
+  { name: "Name", role: "Team Leader", image: "/photo.png" },
+  { name: "Name", role: "Team Leader", image: "/photo.png" },
 ];
 
 const marketingTeam: TeamMember[] = [
-  { name: "Stitch A", role: "Marketing Specialist", image: "/default.png" },
-  { name: "Stitch B", role: "Marketing Coordinator", image: "/default.png" },
-  { name: "Stitch C", role: "Social Media Manager", image: "/default.png" },
-  { name: "Stitch D", role: "Content Creator", image: "/default.png" },
-  { name: "Stitch E", role: "Digital Marketer", image: "/default.png" },
-  { name: "Stitch F", role: "PR Executive", image: "/default.png" },
+  { name: "Name", role: "Marketing Specialist", image: "/photo.png" },
+  { name: "Name", role: "Marketing Coordinator", image: "/photo.png" },
+  { name: "Name", role: "Social Media Manager", image: "/photo.png" },
+  { name: "Name", role: "Content Creator", image: "/photo.png" },
+  { name: "Name", role: "Digital Marketer", image: "/photo.png" },
+  { name: "Name", role: "PR Executive", image: "/photo.png" },
 ];
 
 const Team: React.FC = () => {

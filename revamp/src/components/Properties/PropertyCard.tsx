@@ -17,7 +17,7 @@ const PropertyCard = React.memo(({ property }: { property: Property }) => (
     <Card className="rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-PRIMEwhite h-full flex flex-col">
       <div className="relative w-full h-[250px] sm:h-[280px] md:h-[300px]">
         <img
-          src={property.png}
+          src={property.png[0]}
           alt={property.title}
           loading="lazy"
           className="w-full h-full object-cover"

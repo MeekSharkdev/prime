@@ -211,11 +211,9 @@ export default function PropertiesPage() {
       <Filters
         filters={filters}
         onFilterChange={handleFilterChange}
-        onAdd={handleAddProperty}
-        onDebouncedSearchChange={function (_value: string): void {
+        onAdd={handleAddProperty} onDebouncedSearchChange={function (_value: string): void {
           throw new Error("Function not implemented.");
-        }}
-      />
+        } }      />
 
       {/* Category Sections */}
       <main className="max-w-6xl mx-auto py-12 px-4 space-y-16">
@@ -249,18 +247,24 @@ export default function PropertiesPage() {
               {filtered.length > 0 ? (
                 <>
                   <div className="relative flex items-center">
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="absolute left-[-60px] z-10"
-                      onClick={() => handlePrev(index)}
-                      disabled={page === 0}
-                    >
-                      <ChevronLeft />
-                    </Button>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => {
+                      if (page > 0) {
+                        handlePrev(index);
+                      }
+                    }}
+                    className={`absolute left-[-60px] z-10 transition-opacity
+                      ${page === 0 ? "opacity-50 pointer-events-none cursor-default" : ""}
+                    `}
+                  >
+                    <ChevronLeft />
+                  </Button>
+
 
                     {/* Property Cards */}
-                    <div className="w-full overflow-visible">
+                    <div className="w-full overflow-visible ">
                       <div className="flex-wrap gap-6 transition-all">
                         <AnimatePresence mode="wait">
                           <motion.div
@@ -275,7 +279,9 @@ export default function PropertiesPage() {
                               opacity: 0.1,
                             }}
                             transition={{ duration: 0.6, ease: "easeInOut" }}
-                            className="flex flex-wrap justify-center gap-6"
+                            className={`flex flex-wrap gap-6 ${
+                              current.length < 3 ? "justify-start" : "justify-center"
+                            }`}
                           >
                             {current.map((prop) => (
                               <PropertyCard key={prop.id} property={prop} />
@@ -288,12 +294,18 @@ export default function PropertiesPage() {
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="absolute right-[-60px] z-10"
-                      onClick={() => handleNext(index)}
-                      disabled={page >= totalPages - 1}
+                      onClick={() => {
+                        if (page < totalPages - 1) {
+                          handleNext(index);
+                        }
+                      }}
+                      className={`absolute right-[-60px] z-10 transition-opacity
+                        ${page >= totalPages - 1 ? "opacity-50 pointer-events-none cursor-default" : ""}
+                      `}
                     >
                       <ChevronRight />
                     </Button>
+
                   </div>
 
                   {/* Paginataion Dots */}

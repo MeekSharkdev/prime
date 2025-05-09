@@ -19,20 +19,26 @@ export default function Filters({
   onFilterChange,
   onDebouncedSearchChange,
 }: FiltersProps) {
-  const [searchValue] = useState(filters.searchQuery);
+  const [searchValue, setSearchValue] = useState(filters.searchQuery); // Fixed state initialization
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      onDebouncedSearchChange(searchValue);
-    }, 300); 
+      onDebouncedSearchChange(searchValue); // Trigger debounced search
+    }, 300);
 
-    return () => clearTimeout(timeout);
+    return () => clearTimeout(timeout); // Cleanup timeout on unmount or value change
   }, [searchValue, onDebouncedSearchChange]);
 
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value); // Update local search value
+    onFilterChange(e); // Trigger parent filter change
+  };
+
   return (
-    <div className="relative z-10 bg-PRIMEwhite -mt-20 max-w-4xl border  border-PRIMEgray rounded-lg mx-auto">
-      <div className=" shadow-lg rounded-xl p-6 flex flex-wrap gap-6 items-center justify-between">
+    <div className="relative z-10 bg-PRIMEwhite -mt-20 max-w-4xl rounded-lg mx-auto">
+      <div className="shadow-xl rounded-2xl p-6 flex flex-wrap gap-6 items-center justify-between">
         <div className="flex flex-wrap gap-4 items-center">
+          {/* Location Filter */}
           <select
             name="location"
             value={filters.location}
@@ -45,6 +51,8 @@ export default function Filters({
               </option>
             ))}
           </select>
+
+          {/* Category Filter */}
           <select
             name="category"
             value={filters.category}
@@ -57,6 +65,8 @@ export default function Filters({
               </option>
             ))}
           </select>
+
+          {/* Lease Type Filter */}
           <select
             name="leaseType"
             value={filters.leaseType}
@@ -71,12 +81,13 @@ export default function Filters({
           </select>
         </div>
 
+        {/* Search Input */}
         <div className="relative flex-1 min-w-[220px] max-w-[300px]">
           <input
             type="text"
             name="searchQuery"
-            value={filters.searchQuery}
-            onChange={onFilterChange}
+            value={searchValue} // Use local state for debounced search
+            onChange={handleSearchChange} // Handle search input change
             placeholder="Search properties..."
             className="border-b border-[var(--color-PRIMEgray)] p-2 pl-10 w-full text-sm bg-transparent focus:outline-none focus:border-[var(--color-PRIMEblue)]"
           />

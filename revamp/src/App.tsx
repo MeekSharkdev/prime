@@ -6,7 +6,8 @@ import Contact from "@/pages/Contact";
 import Careers from "@/pages/Careers";
 import Awards from "@/pages/About/Awards";
 import Leadership from "@/pages/About/Leadership";
-import Properties from "@/pages/Properties";
+import Properties from "@/pages/Property/Properties";
+import ViewProperties from "@/pages/Property/View-Properties";
 import { Events } from "@/pages/Events";
 import Pressroom from "@/pages/Pressroom";  // ✅ Import the Pressroom component
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/about/awards" element={<Awards />} />
         <Route path="/about/leadership" element={<Leadership />} />
         <Route path="/properties" element={<Properties />} />
+        <Route path="/view-properties" element={<ViewProperties />} />
         <Route path="/events" element={<Events />} />
         <Route path="/pressroom" element={<Pressroom />} /> {/* ✅ Add Pressroom route */}
       </Routes>
