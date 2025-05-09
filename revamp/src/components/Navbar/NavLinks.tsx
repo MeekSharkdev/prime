@@ -29,18 +29,30 @@ const NavLinks = ({ scrollToTop, isScrolled }: NavLinksProps) => {
   const dropdownVariants = {
     hidden: { opacity: 0, y: -10 },
     visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.05 } },
-    exit: { opacity: 0, y: -10 }
+    exit: { opacity: 0, y: -10 },
   };
 
   return (
     <>
-      <Link to="/expertise" className={`${linkClass} px-2 py-1 ${textColorClass}`} onClick={scrollToTop}>
+      <Link
+        to="/expertise"
+        className={`${linkClass} px-2 py-1 ${textColorClass}`}
+        onClick={scrollToTop}
+      >
         Expertise
       </Link>
-      <Link to="/services" className={`${linkClass} px-2 py-1 ${textColorClass}`} onClick={scrollToTop}>
+      <Link
+        to="/services"
+        className={`${linkClass} px-2 py-1 ${textColorClass}`}
+        onClick={scrollToTop}
+      >
         Services
       </Link>
-      <Link to="/properties" className={`${linkClass} px-2 py-1 ${textColorClass}`} onClick={scrollToTop}>
+      <Link
+        to="/properties"
+        className={`${linkClass} px-2 py-1 ${textColorClass}`}
+        onClick={scrollToTop}
+      >
         Find a Property
       </Link>
 
@@ -67,7 +79,10 @@ const NavLinks = ({ scrollToTop, isScrolled }: NavLinksProps) => {
               variants={dropdownVariants}
               className="absolute left-0 mt-2 w-56 bg-PRIMEwhite shadow-xl rounded-md py-2 z-50 border border-gray-100"
             >
-              {[["PRIME Leadership", "leadership"], ["Awards and Recognition", "awards"]].map(([label, link], i) => (
+              {[
+                ["PRIME Leadership", "leadership"],
+                ["Awards and Recognition", "awards"],
+              ].map(([label, link], i) => (
                 <motion.div key={i} variants={dropdownVariants}>
                   <Link
                     to={`/about/${link}`}
@@ -83,18 +98,34 @@ const NavLinks = ({ scrollToTop, isScrolled }: NavLinksProps) => {
         </AnimatePresence>
       </div>
 
-      <Link to="/careers" className={`${linkClass} px-2 py-1 ${textColorClass}`} onClick={scrollToTop}>
+      <Link
+        to="/careers"
+        className={`${linkClass} px-2 py-1 ${textColorClass}`}
+        onClick={scrollToTop}
+      >
         Careers
       </Link>
-      <Link to="/events" className={`${linkClass} px-2 py-1 ${textColorClass}`} onClick={scrollToTop}>
+      <Link
+        to="/events"
+        className={`${linkClass} px-2 py-1 ${textColorClass}`}
+        onClick={scrollToTop}
+      >
         Events
       </Link>
-      <Link to="/pressroom" className={`${linkClass} px-2 py-1 ${textColorClass}`} onClick={scrollToTop}>
+      <Link
+        to="/pressroom"
+        className={`${linkClass} px-2 py-1 ${textColorClass}`}
+        onClick={scrollToTop}
+      >
         Pressroom
       </Link>
 
       {/* CONTACT CTA */}
-      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="ml-2">
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="ml-2"
+      >
         <Link
           to="/contact"
           onClick={scrollToTop}

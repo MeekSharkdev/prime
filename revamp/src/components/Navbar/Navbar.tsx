@@ -12,7 +12,9 @@ const Navbar = () => {
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isTabletOrMobile, setIsTabletOrMobile] = useState(window.innerWidth < 1280);
+  const [isTabletOrMobile, setIsTabletOrMobile] = useState(
+    window.innerWidth < 1280
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,10 +37,17 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
         document.dispatchEvent(new Event("closeDropdown"));
       }
-      if (mobileMenuRef.current && menuOpen && !mobileMenuRef.current.contains(e.target as Node)) {
+      if (
+        mobileMenuRef.current &&
+        menuOpen &&
+        !mobileMenuRef.current.contains(e.target as Node)
+      ) {
         setMenuOpen(false);
       }
     };
@@ -58,7 +67,9 @@ const Navbar = () => {
     : "bg-PRIMEwhite text-PRIMEblack shadow-md";
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 font-[Gotham Book] ${navClasses}`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 font-[Gotham Book] ${navClasses}`}
+    >
       <div className="w-full flex justify-between items-center px-4 md:px-6">
         {/* Logo */}
         <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
@@ -73,7 +84,10 @@ const Navbar = () => {
 
         {/* Desktop Navigation Links */}
         {!isTabletOrMobile && (
-          <div className="hidden lg:flex items-center space-x-6 text-[20px]" ref={dropdownRef}>
+          <div
+            className="hidden lg:flex items-center space-x-6 text-[20px]"
+            ref={dropdownRef}
+          >
             <NavLinks
               scrollToTop={scrollToTop}
               isScrolled={isHomePage && !scrolled ? false : true}
@@ -89,9 +103,17 @@ const Navbar = () => {
             whileTap={{ scale: 0.9 }}
           >
             {menuOpen ? (
-              <FaTimes className={`w-6 h-6 ${isHomePage && !scrolled ? "text-white" : "text-PRIMEgray"}`} />
+              <FaTimes
+                className={`w-6 h-6 ${
+                  isHomePage && !scrolled ? "text-white" : "text-PRIMEgray"
+                }`}
+              />
             ) : (
-              <FaBars className={`w-6 h-6 ${isHomePage && !scrolled ? "text-white" : "text-PRIMEgray"}`} />
+              <FaBars
+                className={`w-6 h-6 ${
+                  isHomePage && !scrolled ? "text-white" : "text-PRIMEgray"
+                }`}
+              />
             )}
           </motion.button>
         )}
