@@ -5,12 +5,50 @@ import { MapPin, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate, Link } from "react-router-dom";
 
-const positions = Array(7).fill({
-  title: "Position",
-  location: "Quezon City",
-  type: "Full-time",
-  salary: "₱15,000 - ₱20,000",
-});
+const positions = [
+  {
+    title: "Junior Web Developer",
+    location: "Quezon City",
+    type: "Full-time",
+    salary: "₱15,000 - ₱20,000",
+  },
+  {
+    title: "Graphic Designer",
+    location: "Makati",
+    type: "Full-time",
+    salary: "₱18,000 - ₱22,000",
+  },
+  {
+    title: "Marketing Associate",
+    location: "Taguig",
+    type: "Part-time",
+    salary: "₱12,000 - ₱18,000",
+  },
+  {
+    title: "Sales Executive",
+    location: "Cebu",
+    type: "Full-time",
+    salary: "₱20,000 - ₱30,000",
+  },
+  {
+    title: "Real Estate Analyst",
+    location: "Quezon City",
+    type: "Full-time",
+    salary: "₱22,000 - ₱28,000",
+  },
+  {
+    title: "HR Coordinator",
+    location: "Makati",
+    type: "Full-time",
+    salary: "₱16,000 - ₱21,000",
+  },
+  {
+    title: "Administrative Assistant",
+    location: "Pasig",
+    type: "Full-time",
+    salary: "₱14,000 - ₱19,000",
+  },
+];
 
 export default function Careers() {
   const navigate = useNavigate();
