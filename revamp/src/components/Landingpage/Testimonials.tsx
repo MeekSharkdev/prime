@@ -7,19 +7,19 @@ const testimonials = [
     name: "Andy Smith",
     location: "Los Angeles, CA",
     text: "Prime Philippines made finding the perfect commercial space seamless and stress-free. Ideal for businesses seeking premium office locations!",
-    image: "/Rhon.png",
+    image: "/Leadership/photo.png",
   },
   {
     name: "Samantha Lee",
     location: "Makati City, PH",
     text: "Their team was extremely helpful and responsive. Highly recommend for any real estate needs.",
-    image: "/James.png",
+    image: "/Leadership/photo.png",
   },
   {
     name: "Carlos Rivera",
     location: "Cebu City, PH",
     text: "I was impressed with how fast they found us a property that matched all our requirements!",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    image: "/Leadership/photo.png",
   },
 ];
 

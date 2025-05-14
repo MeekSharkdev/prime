@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom"; // Import useParams for dynamic routing
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -16,13 +17,17 @@ import {
 
 import { properties, Property } from "@/data/propertyData"; // Import the properties data
 
-export default function VillaArchetype() {
-  // Simulate fetching a specific property by ID
-  const propertyId = 1; // Replace with dynamic ID if needed
-  const property = properties.find((prop) => prop.id === propertyId) as Property;
+export default function ViewProperties() {
+  const { id } = useParams<{ id: string }>(); // Get the property ID from the URL
+  const property = properties.find((prop) => prop.id === parseInt(id || "", 10)) as Property;
 
   const [currentImage, setCurrentImage] = useState(0);
   const [isFavorite, setIsFavorite] = useState(false);
+
+    // Scroll to the top of the page when the component is rendered
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   const handleNext = () => {
     setCurrentImage((prev) => (prev + 1) % property.png.length);
@@ -40,7 +45,11 @@ export default function VillaArchetype() {
   }, []);
 
   if (!property) {
-    return <div>Property not found</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-gray-500">Property not found.</p>
+      </div>
+    );
   }
 
   return (
@@ -55,7 +64,6 @@ export default function VillaArchetype() {
               <MapPin className="w-4 h-4 mr-1" />
               {property.location}
             </p>
-            
           </div>
 
           <div className="flex items-center gap-4 flex-wrap justify-center sm:justify-end">
@@ -76,7 +84,7 @@ export default function VillaArchetype() {
               >
                 <Heart size={18} fill={isFavorite ? "currentColor" : "none"} />
               </button>
-              <span className="text-lg font-semibold text-PRIMEblack">₱160,000.00/month</span>
+              <span className="text-lg font-semibold text-PRIMEblack">{property.price}</span>
             </div>
           </div>
         </header>
