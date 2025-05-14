@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import heroImage from "@/assets/lastbg.png";
+import heroImage from "@/assets/PrimeBG.jpg";
 
 const Hero: React.FC = () => {
   const [sales, setSales] = useState(0);
@@ -57,8 +57,7 @@ const Hero: React.FC = () => {
         style={{ backgroundImage: `url(${heroImage})` }}
       />
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/10" />
+ <div className="absolute inset-0 bg-PRIMEblack/30 transition duration-300"></div>
 
       {/* Content Wrapper */}
       <div className="relative z-10 container mx-auto h-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center md:items-start md:justify-center md:text-left">
