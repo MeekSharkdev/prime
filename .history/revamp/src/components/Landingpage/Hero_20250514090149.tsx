@@ -70,7 +70,8 @@ const Hero: React.FC = () => {
                 animate
                   ? "translate-x-0 opacity-100"
                   : "-translate-x-10 opacity-0"
-              }`}>
+              }`}
+            >
               <span className="text-PRIMEblue">PRIME</span> Philippines
             </span>
           </h1>
@@ -84,7 +85,8 @@ const Hero: React.FC = () => {
                     ? "translate-x-0 opacity-100"
                     : "-translate-x-8 opacity-0"
                 }`}
-                style={{ transitionDelay: animate ? "300ms" : "0ms" }}>
+                style={{ transitionDelay: animate ? "300ms" : "0ms" }}
+              >
                 <span className="text-[#0E406F] font-bold">Real</span> Estate.
               </span>
               <span
@@ -93,7 +95,8 @@ const Hero: React.FC = () => {
                     ? "translate-x-0 opacity-100"
                     : "-translate-x-8 opacity-0"
                 }`}
-                style={{ transitionDelay: animate ? "700ms" : "0ms" }}>
+                style={{ transitionDelay: animate ? "700ms" : "0ms" }}
+              >
                 <span className="text-[#0E406F] font-bold">We</span> Advise.
               </span>
               <span
@@ -102,7 +105,8 @@ const Hero: React.FC = () => {
                     ? "translate-x-0 opacity-100"
                     : "-translate-x-8 opacity-0"
                 }`}
-                style={{ transitionDelay: animate ? "1000ms" : "0ms" }}>
+                style={{ transitionDelay: animate ? "1000ms" : "0ms" }}
+              >
                 <span className="text-[#0E406F] font-bold">You</span> Advance.
               </span>
             </div>
