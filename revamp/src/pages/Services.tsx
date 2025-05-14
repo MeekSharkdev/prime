@@ -47,7 +47,7 @@ const ServicesPage = () => {
         <div
           className="w-full h-[500px] relative overflow-hidden"
           style={{
-            backgroundImage: "url(/Contact.png)",
+            backgroundImage: "url(/Services/ServicesBG.png)",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
