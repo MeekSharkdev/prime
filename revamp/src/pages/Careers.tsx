@@ -22,7 +22,7 @@ export default function Careers() {
 
       {/* Banner Section */}
       <section className="relative mb-10">
-        <div className="w-full h-[500px] bg-[url('/Careers.jpeg')] bg-cover bg-center rounded-lg relative group">
+        <div className="w-full h-[500px] bg-[url('/Careers/Careers.jpeg')] bg-cover bg-center rounded-lg relative group">
           {/* Overlay */}
           <div className="absolute inset-0 bg-PRIMEblue/70 transition duration-300"></div>
           <motion.div

@@ -29,8 +29,8 @@ const ExpertisePage = () => {
             {/* Section Images */}
             <div className="flex space-x-4">
               {[
-                { image: `/Services.png` },
-                { image: `/Services.png` },
+                { image: `/Services/Services.png` },
+                { image: `/Services/Services.png` },
               ].map((item, index) => (
                 <div
                   key={index}
@@ -79,7 +79,7 @@ const ExpertisePage = () => {
         <div
           className="w-full h-[500px] rounded-lg overflow-hidden relative group"
           style={{
-            backgroundImage: `url(/Contact.png)`,
+            backgroundImage: `url(/Expertise/ExpertiseBG.png)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

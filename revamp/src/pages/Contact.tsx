@@ -46,7 +46,7 @@ export default function Contact() {
           <div
             className="w-full h-[500px] rounded-lg overflow-hidden relative group"
             style={{
-              backgroundImage: `url(/Contact.png)`,
+              backgroundImage: `url(/Contact/Contact.png)`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}

@@ -39,18 +39,18 @@ const PrimeFoundation = (title: string, team: TeamMember[]) => (
 );
 
 const teamLeaders: TeamMember[] = [
-  { name: "Name", role: "Team Leader", image: "/photo.png" },
-  { name: "Name", role: "Team Leader", image: "/photo.png" },
-  { name: "Name", role: "Team Leader", image: "/photo.png" },
+  { name: "Name", role: "Team Leader", image: "/Leadership/photo.png" },
+  { name: "Name", role: "Team Leader", image: "/Leadership/photo.png" },
+  { name: "Name", role: "Team Leader", image: "/Leadership/photo.png" },
 ];
 
 const marketingTeam: TeamMember[] = [
-  { name: "Name", role: "Marketing Specialist", image: "/photo.png" },
-  { name: "Name", role: "Marketing Coordinator", image: "/photo.png" },
-  { name: "Name", role: "Social Media Manager", image: "/photo.png" },
-  { name: "Name", role: "Content Creator", image: "/photo.png" },
-  { name: "Name", role: "Digital Marketer", image: "/photo.png" },
-  { name: "Name", role: "PR Executive", image: "/photo.png" },
+  { name: "Name", role: "Marketing Specialist", image: "/Leadership/photo.png" },
+  { name: "Name", role: "Marketing Coordinator", image: "/Leadership/photo.png" },
+  { name: "Name", role: "Social Media Manager", image: "/Leadership/photo.png" },
+  { name: "Name", role: "Content Creator", image: "/Leadership/photo.png" },
+  { name: "Name", role: "Digital Marketer", image: "/Leadership/photo.png" },
+  { name: "Name", role: "PR Executive", image: "/Leadership/photo.png" },
 ];
 
 const Team: React.FC = () => {
@@ -60,7 +60,7 @@ const Team: React.FC = () => {
 
       {/* Banner Section */}
       <section className="relative mb-10">
-        <div className="w-full h-[500px] bg-[url('/Property/Properties.png')] bg-cover bg-center rounded-lg relative group">
+        <div className="w-full h-[500px] bg-[url('/Leadership/LeadershipBG.png')] bg-cover bg-center rounded-lg relative group">
           {/* Overlay */}
           <div className="absolute inset-0 bg-PRIMEblue/50 transition duration-300"></div>
           <motion.div

@@ -50,7 +50,7 @@ const NewsMediaGrid = () => {
       {/* Navbar */}
       <Navbar />
       <section className="relative mb-10">
-        <div className="w-full h-[500px] bg-[url('/Property/Properties.png')] bg-cover bg-center rounded-lg relative group">
+        <div className="w-full h-[500px] bg-[url('/Pressroom/PressroomBG.png')] bg-cover bg-center rounded-lg relative group">
           {/* Overlay */}
           <div className="absolute inset-0 bg-PRIMEblue opacity-50"></div>{" "}
           {/* Updated to match Careers color */}
