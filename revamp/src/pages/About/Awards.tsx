@@ -15,44 +15,44 @@ interface Award {
 const awardsData: Record<string, Award[]> = {
   2024: [
     {
-      img: "/asia leaders logo.png",
+      img: "/Awards/asia leaders logo.png",
       title: "Asia Leaders Awards",
       date: "November 2019",
     },
     {
-      img: "/golden globe logo.png",
+      img: "/Awards/golden globe logo.png",
       title: "Golden Globe Annual Awards",
       date: "November 2019",
     },
     {
-      img: "/global excellence logo.png",
+      img: "/Awards/global excellence logo.png",
       title: "Global Excellence Awards",
       date: "November 2022",
     },
     {
-      img: "/asia leaders logo.png",
+      img: "/Awards/asia leaders logo.png",
       title: "Asia Leaders Awards",
       date: "November 2019",
     },
   ],
   2023: [
     {
-      img: "/golden globe logo.png",
+      img: "/Awards/golden globe logo.png",
       title: "Golden Globe Annual Awards",
       date: "November 2019",
     },
     {
-      img: "/global excellence logo.png",
+      img: "/Awards/global excellence logo.png",
       title: "Global Excellence Awards",
       date: "November 2019",
     },
     {
-      img: "/asia leaders logo.png",
+      img: "/Awards/asia leaders logo.png",
       title: "Asia Leaders Awards",
       date: "November 2019",
     },
     {
-      img: "/golden globe logo.png",
+      img: "/Awards/golden globe logo.png",
       title: "Golden Globe Annual Awards",
       date: "November 2019",
     },

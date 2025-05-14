@@ -6,17 +6,17 @@ const awards = [
   {
     title: "Asia Leaders Awards",
     date: "November 2019",
-    backgroundImage: "/awards1.jpg",
+    backgroundImage: "/Awards/awards1.jpg",
   },
   {
     title: "Asia Leaders Awards",
     date: "November 2019",
-    backgroundImage: "/awards2.jpg",
+    backgroundImage: "/Awards/awards2.jpg",
   },
   {
     title: "Carlos Rivera",
     date: "Cebu City, PH",
-    backgroundImage: "/awards3.jpg",
+    backgroundImage: "/Awards/awards3.jpg",
   },
 ];
 
