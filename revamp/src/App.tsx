@@ -9,7 +9,7 @@ import Leadership from "@/pages/About/Leadership";
 import Properties from "@/pages/Property/Properties";
 import ViewProperties from "@/pages/Property/View-Properties";
 import { Events } from "@/pages/Events";
-import Pressroom from "@/pages/Pressroom";  // ✅ Import the Pressroom component
+import Pressroom from "@/pages/Pressroom";  
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
         <Route path="/properties" element={<Properties />} />
         <Route path="/view-properties/:id" element={<ViewProperties />} />
         <Route path="/events" element={<Events />} />
-        <Route path="/pressroom" element={<Pressroom />} /> {/* ✅ Add Pressroom route */}
+        <Route path="/pressroom" element={<Pressroom />} /> 
       </Routes>
     </Router>
   );
