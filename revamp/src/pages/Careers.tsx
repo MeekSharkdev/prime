@@ -89,7 +89,7 @@ export default function Careers() {
               </div>
             </div>
             <div className="flex space-x-2">
-              <Button
+           <div className="" />   <Button
                 variant="default"
                 className="p-[20px] bg-PRIMEblue text-PRIMEwhite rounded-lg hover:bg-PRIMEblue/90 transition duration-200"
                 onClick={() => navigate(`/careers/${index}`)} // ✅ Template string fixed
@@ -100,7 +100,6 @@ export default function Careers() {
           </div>
         ))}
       </section>
-
       {/* Footer */}
       <Footer />
     </div>
