@@ -87,7 +87,7 @@ export default function AboutSection() {
           transition={{ duration: 0.6 }}
         >
           <img
-            src="/About.png"
+            src="/About/About.png"
             alt="Modern interior"
             className="w-full md:w-[55%] h-[400px] md:h-full object-cover"
           />

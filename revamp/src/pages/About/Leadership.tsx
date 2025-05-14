@@ -39,18 +39,18 @@ const PrimeFoundation = (title: string, team: TeamMember[]) => (
 );
 
 const teamLeaders: TeamMember[] = [
-  { name: "Name", role: "Team Leader", image: "/photo.png" },
-  { name: "Name", role: "Team Leader", image: "/photo.png" },
-  { name: "Name", role: "Team Leader", image: "/photo.png" },
+  { name: "Name", role: "Team Leader", image: "/Leadership/photo.png" },
+  { name: "Name", role: "Team Leader", image: "/Leadership/photo.png" },
+  { name: "Name", role: "Team Leader", image: "/Leadership/photo.png" },
 ];
 
 const marketingTeam: TeamMember[] = [
-  { name: "Name", role: "Marketing Specialist", image: "/photo.png" },
-  { name: "Name", role: "Marketing Coordinator", image: "/photo.png" },
-  { name: "Name", role: "Social Media Manager", image: "/photo.png" },
-  { name: "Name", role: "Content Creator", image: "/photo.png" },
-  { name: "Name", role: "Digital Marketer", image: "/photo.png" },
-  { name: "Name", role: "PR Executive", image: "/photo.png" },
+  { name: "Name", role: "Marketing Specialist", image: "/Leadership/photo.png" },
+  { name: "Name", role: "Marketing Coordinator", image: "/Leadership/photo.png" },
+  { name: "Name", role: "Social Media Manager", image: "/Leadership/photo.png" },
+  { name: "Name", role: "Content Creator", image: "/Leadership/photo.png" },
+  { name: "Name", role: "Digital Marketer", image: "/Leadership/photo.png" },
+  { name: "Name", role: "PR Executive", image: "/Leadership/photo.png" },
 ];
 
 const Team: React.FC = () => {
