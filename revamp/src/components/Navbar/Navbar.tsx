@@ -75,7 +75,7 @@ const Navbar = () => {
         <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
           <Link to="/" onClick={scrollToTop}>
             <img
-              src="/Logo/prime-logo.png"
+              src="/Logo/prime-logo.webp"
               alt="PRIME Philippines Logo"
               className="h-12 md:h-16 p-1 object-contain"
             />

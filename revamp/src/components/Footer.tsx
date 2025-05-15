@@ -23,7 +23,7 @@ export default function Footer() {
             onClick={() => window.scrollTo(0, 0)}
           >
             <motion.img
-              src="/prime-logo.png"
+              src="/Logo/prime-logo.webp"
               alt="PRIME Philippines logo"
               className="w-56 h-auto object-contain hover:opacity-90 transition-opacity"
               whileHover={{ scale: 1.03 }}

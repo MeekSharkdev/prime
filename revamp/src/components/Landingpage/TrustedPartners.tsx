@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import { FaHandshake, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const partners = [
-  { name: "Prime A", logo: "/Logo/prime-logo.png" },
-  { name: "Greatwork B", logo: "/Logo/greatwork.png" },
-  { name: "Prime C", logo: "/Logo/prime-logo.png" },
-  { name: "Greatwork D", logo: "/Logo/greatwork.png" },
-  { name: "Partner E", logo: "/Logo/prime-logo.png" },
+  { name: "Prime A", logo: "/Logo/prime-logo.webp" },
+  { name: "Greatwork B", logo: "/Logo/greatwork.webp" },
+  { name: "Prime C", logo: "/Logo/CREBA.webp" },
+  { name: "Greatwork D", logo: "/Logo/greatwork.webp" },
+  { name: "Partner E", logo: "/Logo/prime-logo.webp" },
 ];
 
 export default function TrustedPartners() {
