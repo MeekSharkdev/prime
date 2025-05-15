@@ -1,6 +1,6 @@
 // pages/properties.tsx
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar/Navbar";
@@ -15,8 +15,23 @@ import {
 } from "@/data/propertyData";
 
 const ITEMS_PER_PAGE = 3;
-
+// Helper to get query params
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
 export default function PropertiesPage() {
+  const query = useQuery();
+  const navigate = useNavigate();
+
+      // Scroll to the top of the page when the component is rendered
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+  
+    // Read category from URL query param
+  const urlCategory = query.get("category") || "All Categories";
+
   const [properties] = useState<Property[]>(initialProperties);
   const [currentPages, setCurrentPages] = useState(
     Array(categories.length).fill(0)
@@ -31,6 +46,15 @@ export default function PropertiesPage() {
   const [slideDirection, setSlideDirection] = useState<"left" | "right">(
     "right"
   );
+
+  // Sync filter state with URL query param on mount or when URL changes
+  useEffect(() => {
+    setFilters((prev) => ({
+      ...prev,
+      category: urlCategory,
+    }));
+  }, [urlCategory]);
+
 
   // Update visible categories based on selected category filter
   useEffect(() => {
@@ -165,11 +189,15 @@ export default function PropertiesPage() {
   ) => {
     const { name, value } = e.target;
     setFilters((prev) => ({ ...prev, [name]: value }));
+
+    // If category changes, update URL
+    if (name === "category") {
+      navigate(`/properties?category=${encodeURIComponent(value)}`);
+    }
   };
 
-
   function handleAddProperty(): void {
-    throw new Error("Function not implemented.");
+    // Implement as needed
   }
 
   return (

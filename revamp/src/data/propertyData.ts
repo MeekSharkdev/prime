@@ -1,7 +1,5 @@
-import { ReactNode } from "react";
 
 export interface Property {
-  [x: string]: ReactNode;
   id: number;
   title: string;
   type: string;
@@ -81,31 +79,31 @@ export const properties: Property[] = [
 
   // Retail Spaces 
   { id: 6, title: "Prime Retail Strip Mall", type: "Quezon City", location: "Quezon City", png: [
- "/Property/mockup.png",
+ "/Property/Retail.png",
       "/Property/IndustrialLot.png",
       "/Property/IndustrialWarehouse.png",
       "/Property/CommercialLots.png",
   ], category: "Retail Spaces", leaseType: "For Lease", price: "₱150,000/month",  },
   { id: 7, title: "Downtown Retail Space", type: "Manila", location: "Manila", png: [
- "/Property/mockup.png",
+ "/Property/Retail.png",
       "/Property/IndustrialLot.png",
       "/Property/IndustrialWarehouse.png",
       "/Property/CommercialLots.png",
   ], category: "Retail Spaces", leaseType: "For Lease", price: "₱150,000/month",  },
   { id: 8, title: "Shopping Center Space", type: "Pasig", location: "Pasig", png: [
- "/Property/mockup.png",
+ "/Property/Retail.png",
       "/Property/IndustrialLot.png",
       "/Property/IndustrialWarehouse.png",
       "/Property/CommercialLots.png",
   ], category: "Retail Spaces", leaseType: "For Rent", price: "₱150,000/month",  },
   { id: 9, title: "Commercial Showroom", type: "Rizal", location: "Rizal", png: [
- "/Property/mockup.png",
+ "/Property/Retail.png",
       "/Property/IndustrialLot.png",
       "/Property/IndustrialWarehouse.png",
       "/Property/CommercialLots.png",
   ], category: "Retail Spaces", leaseType: "For Rent", price: "₱150,000/month",  },
   { id: 10, title: "High Street Retail", type: "Taguig", location: "Taguig", png: [
- "/Property/mockup.png",
+ "/Property/Retail.png",
       "/Property/IndustrialLot.png",
       "/Property/IndustrialWarehouse.png",
       "/Property/CommercialLots.png",

@@ -17,7 +17,7 @@ export interface EventData {
   subtitle: string;
   date: string;
   location: string;
-  backgroundImage: string;
+  backgroundImage: string;  
   aboutEvent: string;
   speaker: Speaker;
   countdown: Countdown;
@@ -29,7 +29,7 @@ export const eventsData: EventData[] = [
     subtitle: "CONFERENCE 2028",
     date: "22-25 July 2026",      
     location: "Greatwork 2 Office",
-    backgroundImage: "/events/business-conference.jpg",
+    backgroundImage: "/Events/events1.png",
     aboutEvent: "Join top real estate professionals, investors, and tech leaders to explore the future of property innovation. Discover trends, strategies, and digital tools shaping the Philippine real estate landscape.",
     speaker: {
       name: "Louisse B.",
@@ -53,7 +53,7 @@ export const eventsData: EventData[] = [
     subtitle: "SUMMIT 2028",
     date: "15-18 August 2026",
     location: "SMX Convention Center",
-    backgroundImage: "/events/tech-summit.jpg",
+    backgroundImage: "/Events/events2.png",
     aboutEvent: "Experience the future of technology at our annual Tech Innovation Summit. Network with industry leaders, explore cutting-edge solutions, and discover how emerging technologies are transforming the business landscape.",
     speaker: {
       name: "Sarah Chen",
@@ -77,7 +77,7 @@ export const eventsData: EventData[] = [
     subtitle: "FORUM 2028",
     date: "10-13 September 2026",
     location: "Marriott Grand Ballroom",
-    backgroundImage: "/events/digital-forum.jpg",
+    backgroundImage: "/Events/events3.png",
     aboutEvent: "Join us for an exclusive forum on digital transformation in the modern business landscape. Learn from industry experts about implementing successful digital strategies and staying ahead in the digital age.",
     speaker: {
       name: "Michael Rodriguez",
