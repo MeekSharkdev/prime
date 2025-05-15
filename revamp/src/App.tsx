@@ -4,12 +4,15 @@ import Expertise from "@/pages/Expertise";
 import Services from "@/pages/Services";
 import Contact from "@/pages/Contact";
 import Careers from "@/pages/Careers";
+import CareerDetails from "@/pages/CareerDetails"; 
 import Awards from "@/pages/About/Awards";
 import Leadership from "@/pages/About/Leadership";
 import Properties from "@/pages/Property/Properties";
 import ViewProperties from "@/pages/Property/View-Properties";
 import { Events } from "@/pages/Events";
-import Pressroom from "@/pages/Pressroom";  
+import Pressroom from "@/pages/Pressroom";
+
+
 
 function App() {
   return (
@@ -20,6 +23,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/careers/:title" element={<CareerDetails />} />
         <Route path="/about/awards" element={<Awards />} />
         <Route path="/about/leadership" element={<Leadership />} />
         <Route path="/properties" element={<Properties />} />
