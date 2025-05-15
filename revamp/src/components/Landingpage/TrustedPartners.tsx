@@ -84,7 +84,7 @@ export default function TrustedPartners() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-[20pt] md:text-4xl text-[var(--color-dark-gray)] font-bold text-center tracking-tight"
         >
-          Our Valued Partners
+          Our Partner Organizations
         </motion.h2>
 
         {/* Carousel */}
