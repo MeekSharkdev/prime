@@ -65,7 +65,7 @@ export default function Testimonials() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-white py-10 px-4 sm:px-8 md:px-10 lg:px-20 font-gotham-book"
+      className="relative w-fullpy-10 px-4 sm:px-8 md:px-10 lg:px-20 font-gotham-book"
     >
       <div className="max-w-[1400px] mx-auto p-8 md:p-12">
         {/* Section Tag */}

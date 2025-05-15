@@ -3,12 +3,34 @@ import { motion } from "framer-motion";
 import { FaHandshake, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const partners = [
-  { name: "Prime A", logo: "/Logo/prime-logo.webp" },
-  { name: "Greatwork B", logo: "/Logo/greatwork.webp" },
-  { name: "Prime C", logo: "/Logo/CREBA.webp" },
-  { name: "Greatwork D", logo: "/Logo/greatwork.webp" },
-  { name: "Partner E", logo: "/Logo/prime-logo.webp" },
+  {
+    name: "Prime Philippines",
+    logo: "/Logo/prime-logo.webp",
+    description: "Leading supplier of property materials and services.",
+  },
+  {
+    name: "Greatwork",
+    logo: "/Logo/greatwork.webp",
+    description: "Innovative partner in real estate project execution.",
+  },
+  {
+    name: "CREBA",
+    logo: "/Logo/CREBA.webp",
+    description: "Committed to professional excellence in construction.",
+  },
+  {
+    name: "REBAP",
+    logo: "/Logo/REBAP.webp",
+    description: "Trusted partner in building nationwide networks.",
+  },
+  {
+    name: "PAREB",
+    logo: "/Logo/PAREB.webp",
+    description: "Strengthening client relationships and business growth.",
+  },
 ];
+
+
 
 export default function TrustedPartners() {
   const [current, setCurrent] = useState(0);
@@ -130,21 +152,29 @@ export default function TrustedPartners() {
               />
             </motion.div>
 
-            {/* Current Partner */}
-            <motion.div
-              key={current}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.5 }}
-              className="z-10 w-36 h-36 md:w-52 md:h-52 flex flex-col items-center justify-center relative transform scale-110"
-            >
-              <img
-                src={partners[current].logo}
-                alt={partners[current].name}
-                className="w-full h-full object-contain transform scale-125 hover:scale-130 transition-transform duration-300"
-              />
-            </motion.div>
+<motion.div
+  key={current}
+  initial={{ opacity: 0, x: 50 }}
+  animate={{ opacity: 1, x: 0 }}
+  exit={{ opacity: 0, x: -50 }}
+  transition={{ duration: 0.5 }}
+  className="z-10 w-[250px] h-[320px] md:w-[300px] md:h-[360px] flex flex-col items-center justify-start text-center px-4 pt-4"
+>
+  <div className="w-36 h-36 md:w-44 md:h-44 flex items-center justify-center mb-4">
+    <img
+      src={partners[current].logo}
+      alt={partners[current].name}
+      className="max-w-[90%] max-h-[90%] object-contain transition-transform duration-300 hover:scale-105"
+    />
+  </div>
+  <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-1">
+    {partners[current].name}
+  </h3>
+  <p className="text-sm md:text-base text-gray-600 leading-snug">
+    {partners[current].description || "Trusted partner in the industry."}
+  </p>
+</motion.div>
+
 
             {/* Right Partner */}
             <motion.div
