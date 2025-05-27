@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"; // Import useParams for dynamic routing
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer";
-import ContactForm from "@/components/Properties/ContactForm";
+
 
 import {
   MapPin,
@@ -17,14 +20,32 @@ import { properties, Property } from "@/data/propertyData"; // Import the proper
 
 export default function ViewProperties() {
   const { id } = useParams<{ id: string }>(); // Get the property ID from the URL
-  const property = properties.find(
-    (prop) => prop.id === parseInt(id || "", 10)
-  ) as Property;
+  const property = properties.find((prop) => prop.id === parseInt(id || "", 10)) as Property;
 
   const [currentImage, setCurrentImage] = useState(0);
   const [isFavorite, setIsFavorite] = useState(false);
 
-  // Scroll to the top of the page when the component is rendered
+  const [formData, setFormData] = useState({
+  name: "",
+  phone: "",
+  email: "",
+  message: "",
+});
+
+const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const { id, value } = e.target;
+  setFormData((prev) => ({ ...prev, [id]: value }));
+};
+
+const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  console.log("Form submitted:", formData);
+  // Optionally reset form
+  setFormData({ name: "", phone: "", email: "", message: "" });
+};
+
+
+    // Scroll to the top of the page when the component is rendered
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
@@ -34,9 +55,7 @@ export default function ViewProperties() {
   };
 
   const handlePrev = () => {
-    setCurrentImage(
-      (prev) => (prev - 1 + property.png.length) % property.png.length
-    );
+    setCurrentImage((prev) => (prev - 1 + property.png.length) % property.png.length);
   };
 
   useEffect(() => {
@@ -189,7 +208,8 @@ export default function ViewProperties() {
               </div>
             </div>
           </section>
-          <ContactForm />
+
+          
         </main>
       </div>
       <Footer />
